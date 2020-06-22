@@ -10,6 +10,7 @@ class SessionController < ApplicationController
       # remember the user
       session[:user_id] = user.id
       # redirec to home
+      redirect_to root_path
     else
       flash[:error] = "Invalid Email or Password"
       redirect_to login_path
