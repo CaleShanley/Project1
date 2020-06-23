@@ -19,6 +19,6 @@
   <% end %>
   <div class="controls">
     <%= link_to 'Edit', edit_todo_list_path(l) %> |
-    <%= link_to 'New Task', new_task_path %>
+    <%= link_to 'New Task', new_task_path(:list_id => l.id) %>
   </div>
 <% end %>

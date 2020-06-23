@@ -13,16 +13,14 @@ class TasksController < ApplicationController
   end
 
   def new
+    @list = TodoList.find params[:list_id]
     @task = Task.new
   end
 
   def create
     if @current_user.present?
       task = Task.create list_params
-      # form now has listId
-      @current_user.todo_lists.first.tasks << task # dont need to save to use
-      # relation should be user -> list -> task
-    end
+      @current_user.todo_lists.find(params["task"]["list_id"]).tasks << task 
     redirect_to todo_lists_path
   end
 

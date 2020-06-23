@@ -19,7 +19,7 @@ class TodoListsController < ApplicationController
     list = TodoList.find params[:id]
     list.update list_params
 
-    redirect_to todo
+    redirect_to todo_lists_path
   end
 
   def post
