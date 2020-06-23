@@ -11,7 +11,7 @@ class TodoListsController < ApplicationController
     @list = TodoList.new
   end
 
-  def edit 
+  def edit
     @list = TodoList.find params[:id]
   end
 
@@ -19,11 +19,10 @@ class TodoListsController < ApplicationController
     list = TodoList.find params[:id]
     list.update list_params
 
-    redirect_to todo_lists_path
+    redirect_to todo
   end
 
   def post
-    
   end
 
   def create
@@ -31,12 +30,12 @@ class TodoListsController < ApplicationController
       list = TodoList.create list_params
       @current_user.todo_lists << list
     end
-    redirect_to todo_lists_path	
+    redirect_to todo_lists_path
   end
 
   private
+
   def list_params
     params.require(:todo_list).permit(:title, :description)
   end
-
 end

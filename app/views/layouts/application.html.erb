@@ -4,31 +4,31 @@
     <title>To Do List</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="/app/assets/stylesheets/normalize.css">
+    <link rel="stylesheet" href="/app/assets/stylesheets/skeleton.css">
   </head>
-
   <body>
     <nav>
-      <%= link_to 'Home', root_path %>
-
-      <% if @current_user.present? %>
-        <% if @current_user.admin? %>
-          <%= link_to 'All Users', users_path %>
+      <div class="container">
+        <%= link_to 'Home', root_path %>
+        <% if @current_user.present? %>
+          <% if @current_user.admin? %>
+            <%= link_to 'All Users', users_path %>
+          <% end %>
+          <%= link_to 'New To-Do List', new_todo_list_path %>
+          <%= link_to 'To-Do Lists', todo_lists_path	 %>
+          <%= link_to "Log out", login_path, :method => 'delete' %>
+          <%= link_to  @current_user.email %>
+        <% else %>
+          <%= link_to 'Sign in', login_path %>
+          <%= link_to 'Sign up', new_user_path %>
         <% end %>
-        <%= link_to 'New To-Do List', new_todo_list_path %>
-        <%= link_to 'To-Do Lists', todo_lists_path	 %>
-        <%= link_to "Log out", login_path, :method => 'delete' %>
-        You are logged in as: <%= @current_user.email %>
-      <% else %>
-
-        <%= link_to 'Sign in', login_path %>
-        <%= link_to 'Sign up', new_user_path %>   
-      <% end %> 
-
-    </nav>
-    
-    <%= yield %>
+      </nav>
+    </div>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

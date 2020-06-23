@@ -1,25 +1,24 @@
 <h1>All Todo-Lists</h1>
 <% @lists.each do |l| %>
   <div class="todo-list">
-    <p>
+    <row>
       <strong>Title:</strong>
-      <%= l.title %>
-    </p>
-
-    <p>
+      <%= l.title %> |
+    </row>
+    <row>
       <strong>Description:</strong>
       <%= l.description %>
-    </p>
+    </row>
   </div>
-
   <% l.tasks.each do |t| %>
-    <p>
+    <row>
       <%= t.name %>
       <%= link_to 'Complete', {:controller => "tasks", :action => "complete", :id => t.id }, :method => 'post' %>
-    </p>
+      <br>
+    </row>
   <% end %>
-
   <div class="controls">
     <%= link_to 'Edit', edit_todo_list_path(l) %> |
+    <%= link_to 'New Task', new_task_path %>
   </div>
 <% end %>
