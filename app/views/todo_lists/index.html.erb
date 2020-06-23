@@ -1,6 +1,14 @@
 <h1>Todo List</h1>
-<% @lists.each do |l| %>
-  <br>  
+  <% @lists.each do |l| %>
+<p>
+  <strong>Title:</strong>
   <%= l.title %>
-  <%= l.description%>
-<% end %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= l.description %>
+</p>
+  <%= link_to 'Edit', edit_todo_list_path(@lists) %> |
+  <%= link_to 'Back', todo_lists_path %> |
+  <%= check_box_tag "Complete #{l.id}, #{@l.complete}", l.complete?, disabled: "#{l.done?}" %>
+  <% end %>

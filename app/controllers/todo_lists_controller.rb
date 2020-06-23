@@ -1,6 +1,6 @@
 class TodoListsController < ApplicationController
   def index
-    @lists = TodoList.all
+    @lists = @current_user.todo_lists
   end
 
   def show
@@ -11,13 +11,18 @@ class TodoListsController < ApplicationController
     @list = TodoList.new
   end
 
-
   def create
     if @current_user.present?
       list = TodoList.create list_params
       @current_user.todo_lists << list
     end
     redirect_to todo_lists_path	
+  end
+
+  def complete
+    task = TodoList.find params[:id]
+    task.destroy
+    redirect_to todo_lists_path
   end
 
 
