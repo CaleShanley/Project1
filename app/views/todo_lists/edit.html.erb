@@ -1,2 +1,12 @@
-<h1>TodoList#edit</h1>
-<p>Find me in app/views/todo_list/edit.html.erb</p>
+<h1>Edit Todo-List </h1>
+<%= form_for @list do |f| %>
+ <strong><%= f.label :title %></strong>
+  <%= f.text_field :title %>
+
+  <strong><%= f.label :description %></strong>
+  <%= f.text_field :description %>
+
+  <%= f.submit 'Update' %>
+<% end %>
+
+

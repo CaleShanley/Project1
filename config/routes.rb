@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'
 
+  post '/tasks/:id' => 'tasks#complete'
 end

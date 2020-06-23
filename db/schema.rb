@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_06_22_105825) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "todo_list_id"
+    t.boolean "complete", default: false
   end
 
   create_table "todo_lists", force: :cascade do |t|
@@ -28,7 +29,6 @@ ActiveRecord::Schema.define(version: 2020_06_22_105825) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.boolean "complete", default: false
   end
 
   create_table "users", force: :cascade do |t|

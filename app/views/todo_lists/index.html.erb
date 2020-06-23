@@ -1,14 +1,25 @@
-<h1>Todo List</h1>
-  <% @lists.each do |l| %>
-<p>
-  <strong>Title:</strong>
-  <%= l.title %>
-</p>
-<p>
-  <strong>Description:</strong>
-  <%= l.description %>
-</p>
-  <%= link_to 'Edit', edit_todo_list_path(@lists) %> |
-  <%= link_to 'Back', todo_lists_path %> |
-  <%= check_box_tag "Complete #{l.id}, #{@l.complete}", l.complete?, disabled: "#{l.done?}" %>
+<h1>All Todo-Lists</h1>
+<% @lists.each do |l| %>
+  <div class="todo-list">
+    <p>
+      <strong>Title:</strong>
+      <%= l.title %>
+    </p>
+
+    <p>
+      <strong>Description:</strong>
+      <%= l.description %>
+    </p>
+  </div>
+
+  <% l.tasks.each do |t| %>
+    <p>
+      <%= t.name %>
+      <%= link_to 'Complete', {:controller => "tasks", :action => "complete", :id => t.id }, :method => 'post' %>
+    </p>
   <% end %>
+
+  <div class="controls">
+    <%= link_to 'Edit', edit_todo_list_path(l) %> |
+  </div>
+<% end %>

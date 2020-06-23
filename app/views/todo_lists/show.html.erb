@@ -1,2 +1,5 @@
-<h1>TodoList#show</h1>
-<p>Find me in app/views/todo_list/show.html.erb</p>
+<h1>Show Todo-List</h1>
+<% @list.tasks.each do |t| %>
+  <%= t.name %>
+  <%= link_to 'Complete', {:controller => "tasks", :action => "complete", :id => t.id }, :method => 'post' %>
+<% end %>
