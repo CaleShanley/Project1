@@ -20,8 +20,9 @@ class TasksController < ApplicationController
   def create
     if @current_user.present?
       task = Task.create list_params
-      @current_user.todo_lists.find(params["task"]["list_id"]).tasks << task 
-    redirect_to todo_lists_path
+      @current_user.todo_lists.find(params["task"]["list_id"]).tasks << task
+      redirect_to todo_lists_path
+    end
   end
 
   private
