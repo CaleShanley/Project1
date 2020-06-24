@@ -2,6 +2,6 @@
 <%= form_for @task do |t| %>
   <%= t.hidden_field :list_id, :value => @list.id %>
   <%= t.label :Task %>
-  <%= t.text_field :name %>
+  <%= t.text_field :name, {:required => true} %>
   <%= t.submit 'Create' %>
 <% end %>

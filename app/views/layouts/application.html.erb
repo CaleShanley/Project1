@@ -6,21 +6,18 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="/app/assets/stylesheets/normalize.css">
-    <link rel="stylesheet" href="/app/assets/stylesheets/skeleton.css">
   </head>
   <body>
-    <nav>
-      <div class="container">
-        <%= link_to 'Home', root_path %>
+    <div class="container">
+      <nav>
+        <%= link_to 'To-Do Lists', root_path %>
         <% if @current_user.present? %>
           <% if @current_user.admin? %>
             <%= link_to 'All Users', users_path %>
           <% end %>
           <%= link_to 'New To-Do List', new_todo_list_path %>
-          <%= link_to 'To-Do Lists', todo_lists_path	 %>
           <%= link_to "Log out", login_path, :method => 'delete' %>
-          <%= link_to  @current_user.email %>
+          <%= link_to @current_user.email %>
         <% else %>
           <%= link_to 'Sign in', login_path %>
           <%= link_to 'Sign up', new_user_path %>

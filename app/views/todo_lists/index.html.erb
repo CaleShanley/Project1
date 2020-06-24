@@ -1,26 +1,28 @@
 <h1>All Todo-Lists</h1>
-<% @lists.each do |l| %>
-  <div class="todo-list">
-    <row>
-      <strong>Title:</strong>
-      <%= l.title %> |
-    </row>
-    <row>
-      <strong>Description:</strong>
-      <%= l.description %>
-    </row>
-  </div>
-  <% l.tasks.each do |t| %>
-    <% if t.complete? %>
-      <strike style="opacity: 0.4;"><%= t.name %></strike>
-    <% else %>
-      <%= t.name %>
-    <% end %>
-    <%= link_to 'Complete', {:controller => "tasks", :action => "complete", :id => t.id }, :method => 'post' %>
-    <br>
+<div class="table">
+  <% @lists.each do |l| %>
+    <div>
+      <div class="todo-list">
+        <div>
+          <strong>Title:</strong>
+          <%= l.title %> |
+          <strong>Description:</strong>
+          <%= l.description %>
+        </div>
+      </div>
+      <% l.tasks.each do |t| %>
+        <% if t.complete? %>
+          <strike style="opacity: 0.4;">Task Complete: <%= t.name %></strike>
+        <% else %>
+          <strong>Task: </strong><%= t.name %>
+        <% end %>
+        <div>
+          <%= link_to 'Edit Task', edit_task_path(:id => t.id), :class => "btn btn-primary btn-sm" %> ||
+          <%= link_to 'Complete Task', {:controller => "tasks", :action => "complete", :id => t.id }, :class => "btn btn-primary btn-sm", :method => 'post' %>
+        </div>
+      <% end %>
+      <%= link_to 'Edit To-Do List', edit_todo_list_path(l), :class => 'btn btn-secondary btn-sm' %>
+      <%= link_to 'New Task', new_task_path(:list_id => l.id), :class => 'btn btn-secondary btn-sm' %>
+      <%= link_to 'Delete To-Do List', todo_lists_path(:list_id => l.id), :class => 'btn btn-secondary btn-sm', :method => 'delete' %>
+    </div>
   <% end %>
-  <div class="controls">
-    <%= link_to 'Edit', edit_todo_list_path(l) %> |
-    <%= link_to 'New Task', new_task_path(:list_id => l.id) %>
-  </div>
-<% end %>

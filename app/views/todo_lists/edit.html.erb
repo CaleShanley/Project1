@@ -1,8 +1,8 @@
 <h1>Edit Todo-List </h1>
 <%= form_for @list do |f| %>
   <strong><%= f.label :title %></strong>
-  <%= f.text_field :title %>
+  <%= f.text_field :title, {:required => true}%>
   <strong><%= f.label :description %></strong>
-  <%= f.text_field :description %>
+  <%= f.text_field :description, {:required => true}%>
   <%= f.submit 'Update' %>
 <% end %>

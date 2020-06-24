@@ -18,9 +18,20 @@ class TasksController < ApplicationController
     @task = Task.new
   end
 
+  def edit
+    @task = Task.find params[:id]
+  end
+
+  def update
+    task = Task.find params[:id]
+    task.update task_params
+
+    redirect_to todo_lists_path
+  end
+
   def create
     if @current_user.present?
-      task = Task.create list_params
+      task = Task.create task_params
       @current_user.todo_lists.find(params["task"]["list_id"]).tasks << task
       redirect_to todo_lists_path
     end
@@ -28,7 +39,7 @@ class TasksController < ApplicationController
 
   private
 
-  def list_params
+  def task_params
     params.require(:task).permit(:name)
   end
 end

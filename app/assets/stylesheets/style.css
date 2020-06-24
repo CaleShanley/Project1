@@ -22,11 +22,13 @@ nav a.active {
   color: white;
 }
 
-input[id='line-through'] {
-  display: none;
+.todo-list {
+  text-decoration: underline;
+  font-size: 19px;
 }
 
-input[id='line-through']:checked ~ p.strikethrough {
-  text-decoration: line-through;
-  color: red;
+.table > div {
+  outline: 2px solid black;
+  margin: 1rem 0;
+  box-shadow: 5px 10px;
 }

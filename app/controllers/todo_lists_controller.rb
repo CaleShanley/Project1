@@ -22,7 +22,10 @@ class TodoListsController < ApplicationController
     redirect_to todo_lists_path
   end
 
-  def post
+  def destroy
+    list = TodoList.find params[:list_id]
+    list.destroy
+    redirect_to todo_lists_path
   end
 
   def create

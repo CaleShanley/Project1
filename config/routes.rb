@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root :to => "pages#home"
+  root :to => "todo_lists#index"
 
   resources :users, :only => [:new, :create]
   resources :todo_lists
@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   post "/login" => "session#create"
   delete "/login" => "session#destroy"
 
+  get "/tasks/:id/edit" => "tasks#edit"
   post "/tasks/:id" => "tasks#complete"
 
-  # '/list/:id/new_task'
+  delete "/todo_lists" => "todo_lists#destroy"
 end

@@ -1,0 +1,6 @@
+<h1>Edit Todo-List </h1>
+<%= form_for @task do |f| %>
+  <%= f.label :task %>
+  <%= f.text_field :name %>
+  <%= f.submit 'Update' %>
+<% end %>
