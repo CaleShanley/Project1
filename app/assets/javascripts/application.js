@@ -14,4 +14,5 @@
 //= require jquery
 //= require popper
 //= require bootstrap-sprockets
+//= require particles.js
 //= require_tree .

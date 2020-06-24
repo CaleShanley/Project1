@@ -8,8 +8,10 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
+    <div id="particles-js"></div>
     <div class="container">
       <nav>
+        <div class="nav-center"></div>
         <%= link_to 'To-Do Lists', root_path %>
         <% if @current_user.present? %>
           <% if @current_user.admin? %>
@@ -22,10 +24,14 @@
           <%= link_to 'Sign in', login_path %>
           <%= link_to 'Sign up', new_user_path %>
         <% end %>
-      </nav>
-    </div>
-    <div class="container">
+      </div>
+    </nav>
+  </div>
+  <div class="container">
+    <div class="todo-list-center">
       <%= yield %>
+      <footer>&copy; Copyrighted by Cale 2020</footer>
     </div>
-  </body>
+  </div>
+</body>
 </html>
