@@ -21,3 +21,12 @@ nav a:hover {
 nav a.active {
   color: white;
 }
+
+input[id='line-through'] {
+  display: none;
+}
+
+input[id='line-through']:checked ~ p.strikethrough {
+  text-decoration: line-through;
+  color: red;
+}

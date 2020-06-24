@@ -2,6 +2,7 @@ class TasksController < ApplicationController
   def complete
     task = Task.find params[:id]
     task.update_attribute(:complete, true)
+    redirect_to todo_lists_path
   end
 
   def index
