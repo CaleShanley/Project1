@@ -1,27 +1,44 @@
-# README
+# ToDo-List - By Cale
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**Demo Link**
+[https://project1-todo-list.herokuapp.com/login]
 
-Things you may want to cover:
+## The Process
+ ____,
+/.---|
+`    |     ___
+    (=\.  /-. \
+     |\/\_|"|  |
+     |_\ |;-|  ;
+     | / \| |_/ \
+     | )/\/      \
+     | ( '|  \   |
+     |    \_ /   \
+     |    /  \_.--\
+     \    |    (|\`
+      |   |     \
+      |   |      '.
+      |  /         \
+      \  \.__.__.-._)
 
-- Ruby version
+This repo contains my ToDo-List for Project1 of General Assembly. It lets a user create ToDo-lists and put tasks in them. The user can mark the list as complete as well as the tasks. 
 
-- System dependencies
+This project was quite teadious and frustraing but once you get it all working it's well worth it. The parts of this program that confused me was getting all the **Models** working and linked up correctly. Another part that really confused me was getting the Task id (`<%= t.hidden_field :list_id, :value => @list.id %>`) so that you could edit the task in that ToDo-list.
 
-- Configuration
+Some of the languages used in this project are -
 
-- Database creation
+- HTML
+- CSS
+- JavaScript
+- Jquery
+- Ruby
+- SQL
 
-- Database initialization
+Some of the gems used in this project i think are worth mentioning are -
 
-- How to run the test suite
+gem 'pry-rails'
+gem 'bcypt'
+gem 'bootstrap'
+gem 'jquery-rails'
+gem 'particles-js-rails', '~> 2.0'
 
-- Services (job queues, cache servers, search engines, etc.)
-
-- Deployment instructions
-
-- ...
-
-Used gem 'pry-rails'
-Used gem 'bcypt'
