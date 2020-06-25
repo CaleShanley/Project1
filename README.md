@@ -4,22 +4,23 @@
 [https://project1-todo-list.herokuapp.com/login]
 
 ## The Process
- ____,
-/.---|
-`    |     ___
-    (=\.  /-. \
-     |\/\_|"|  |
-     |_\ |;-|  ;
-     | / \| |_/ \
-     | )/\/      \
-     | ( '|  \   |
-     |    \_ /   \
-     |    /  \_.--\
-     \    |    (|\`
-      |   |     \
-      |   |      '.
-      |  /         \
-      \  \.__.__.-._)
+             ___          
+            /   \\        
+       /\\ | . . \\       
+     ////\\|     ||       
+   ////   \\ ___//\       
+  ///      \\      \      
+ ///       |\\      |     
+//         | \\  \   \    
+/          |  \\  \   \   
+           |   \\ /   /   
+           |    \/   /    
+           |     \\/|     
+           |      \\|     
+           |       \\     
+           |        |     
+           |_________\    
+
 
 This repo contains my ToDo-List for Project1 of General Assembly. It lets a user create ToDo-lists and put tasks in them. The user can mark the list as complete as well as the tasks. 
 
