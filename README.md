@@ -37,8 +37,8 @@ Some of the languages used in this project are -
 
 Some of the gems used in this project i think are worth mentioning are -
 
-gem 'pry-rails'
-gem 'bcypt'
-gem 'bootstrap'
-gem 'jquery-rails'
-gem 'particles-js-rails', '~> 2.0'
+- gem 'pry-rails'
+- gem 'bcypt'
+- gem 'bootstrap'
+- gem 'jquery-rails'
+- gem 'particles-js-rails', '~> 2.0'
