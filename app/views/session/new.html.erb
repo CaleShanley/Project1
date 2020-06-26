@@ -1,5 +1,6 @@
 <div class="sign-in">
   <h1>Sign In</h1>
+  <!-- If the User enters the wrong details or nothing at all it prompts them the error/s -->
   <% if flash[:error].present? %>
     <h2><%= flash[:error] %></h2>
   <% end %>

@@ -1,5 +1,7 @@
+<%# Creates a new task in the users ToDo-List %>
 <h1>New Task</h1>
 <%= form_for @task do |t| %>
+  <%# This line of code gets the (ToDo-List id)%>
   <%= t.hidden_field :list_id, :value => @list.id %>
   <%= t.label :Task %>
   <%= t.text_field :name, {:required => true} %>

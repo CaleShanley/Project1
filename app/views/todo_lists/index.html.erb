@@ -1,3 +1,4 @@
+<%# All ToDo-lists for the user id %>
 <h1>All Todo-Lists</h1>
 <div class="table">
   <% @lists.each do |l| %>
@@ -12,9 +13,10 @@
       </div>
       <div class="tasks">
         <% l.tasks.each do |t| %>
+          <%# If the task is completed (true), it will set the to have a line through and be transparent  %>
           <% if t.complete? %>
             <strike style="opacity: 0.7;">Task Complete: <%= t.name %></strike> ||
-          <% else %>
+          <% else %> <!-- Else it will show the task uncompleted and not striked out -->
             <strong>TASK:  </strong> <%= t.name %>  ||
           <% end %>
           <%= link_to 'Edit Task', edit_task_path(:id => t.id), :class => "btn btn-dark"%>
@@ -22,7 +24,7 @@
           <br>
         <% end %>
       </div>
-      <div class="bottom-buttons">
+      <div class="bottom-buttons"> <!-- these are the bottom buttons -->
         <%= link_to 'Edit To-Do List', edit_todo_list_path(l), :class => "btn btn-dark"%>
         <%= link_to 'New Task', new_task_path(:list_id => l.id), :class => "btn btn-dark"%>
         <%= link_to 'Delete To-Do List', todo_lists_path(:list_id => l.id), :class => "btn btn-dark", :method => 'delete' %>

@@ -1,7 +1,7 @@
 <div class="sign-up">
   <h1>Sign Up</h1>
   <% if @user.errors.any?  %>
-    <ol>
+    <ol> <!-- If the user doesn't enter correct details it will deny and let them know with a prompt -->
       <% @user.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
