@@ -1,9 +1,10 @@
 class TodoListsController < ApplicationController
   def index
-    # if @current_user.present?
-    #   redirect_to login_path
-    # end
-    @lists = @current_user.todo_lists
+    if @current_user.present?
+      @lists = @current_user.todo_lists
+    else
+      @lists = TodoList.none
+    end
   end
 
   def show
