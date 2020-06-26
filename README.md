@@ -26,7 +26,7 @@ This repo contains my ToDo-List for Project1 of General Assembly. It lets a user
 
 This project was quite teadious and frustraing but once you get it all working it's well worth it. The parts of this program that confused me was getting all the **Models** working and linked up correctly. Another part that really confused me was getting the Task id (`<%= t.hidden_field :list_id, :value => @list.id %>`) so that you could edit the task in that ToDo-list.
 
-# Languages Used
+## Languages Used
 
 - HTML
 - CSS
@@ -35,10 +35,17 @@ This project was quite teadious and frustraing but once you get it all working i
 - Ruby
 - SQL
 
-# Gems Used
+## Gems Used
 
 - gem 'pry-rails'
 - gem 'bcypt'
 - gem 'bootstrap'
 - gem 'jquery-rails'
 - gem 'particles-js-rails', '~> 2.0'
+
+## To-do List
+
+- Wanted to style the project more professional
+- Wanted to add a ADMIN section
+- Wanted to add a Date/Time system
+- Wanted to create a notification effect
